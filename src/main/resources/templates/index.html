@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>F1 Event Booking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+        background:black;
+        color:white;
+        font-family: 'Orbitron', sans-serif;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+        height:80vh;
+        background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("/lewisbg.jpg");
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        text-align:center;
+        }
+
+        /* TITLE STYLE */
+
+        .hero h1{
+        font-size:70px;
+        font-weight:bold;
+        text-shadow:3px 3px 15px red;
+        letter-spacing:3px;
+        }
+
+        /* SUBTITLE */
+
+        .hero p{
+        font-size:20px;
+        margin-top:10px;
+        text-shadow:2px 2px 10px black;
+        }
+
+        /* BUTTON */
+
+        .btn-danger{
+        font-size:20px;
+        padding:12px 30px;
+        border-radius:30px;
+        transition:0.3s;
+        }
+
+        .btn-danger:hover{
+        transform:scale(1.1);
+        }
+
+        /* DRIVER IMAGES */
+
+        .driver-card img{
+height:140px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.driver-card img:hover{
+transform:scale(1.1);
+}
+
+        /* NAVBAR */
+
+        .navbar{
+        background:#111;
+        }
+
+        .menu-btn{
+        font-size:28px;
+        cursor:pointer;
+        color:white;
+        }
+
+        .logo{
+        height:40px;
+        }
+        .sidebar{
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        background-color:#111;
+        overflow-x:hidden;
+        transition:0.4s;
+        padding-top:60px;
+        }
+
+        .sidebar a{
+        padding:10px 20px;
+        text-decoration:none;
+        font-size:20px;
+        color:white;
+        display:block;
+        transition:0.3s;
+        }
+
+        .sidebar a:hover{
+        background:red;
+        }
+
+        .closebtn{
+        position:absolute;
+        top:10px;
+        right:20px;
+        font-size:30px;
+        }
+        .driver-card{
+        background:#111;
+        padding:15px;
+        border-radius:10px;
+        transition:0.3s;
+        }
+
+        .driver-card:hover{
+        transform:translateY(-10px);
+        box-shadow:0 10px 20px rgba(255,0,0,0.5);
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div id="sidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
+
+    <a href="/">Home</a>
+    <a href="/events">Race Calendar</a>
+    <a href="/admin">Admin Login</a>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar px-3">
+
+    <div class="menu-btn" onclick="openMenu()">
+        ☰
+    </div>
+
+    <div class="ms-auto">
+        <img src="/logo_f1.png" class="logo">
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero text-center">
+    <h1 class="display-3">🏎 F1 🏎</h1>
+    <h1 class="display-3">Grand Prix Bookings</h1>
+
+
+    <p>Experience the speed. Book your race tickets now.</p>
+
+    <a href="/events" class="btn btn-danger btn-lg">View Race Calendar</a>
+
+</div>
+
+
+<!-- DRIVERS -->
+
+<div class="container-fluid mt-5">
+
+    <div class="row">
+
+        <!-- Left Side : Next Race -->
+        <div class="col-md-3">
+
+            <h2 class="text-center">🏁 Next Races</h2>
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Chinese GP
+                    </h5>
+
+                    <p>📍 Shanghai International Circuit</p>
+
+                    <p>Sun, 15 Mar, 3:00 pm</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div><br>
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Japanese GP</h5>
+
+                    <p>📍 Suzuka Circuit</p>
+
+                    <p>Sun, 29 Mar, 1:00 pm</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div><br>
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Bahrain GP
+                    </h5>
+
+                    <p>📍 Bahrain International Circuit</p>
+
+                    <p>Sun, 12 Apr, 11:00 pm</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div><br>
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Saudi Arabian Grand Prix
+                    </h5>
+
+                    <p>📍 Jeddah Corniche Circuit</p>
+
+                    <p>Mon, 20 Apr, 1:00 am</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div><br>
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Miami Grand Prix
+                    </h5>
+
+                    <p>📍 Miami International Autodrome</p>
+
+                    <p>Mon, 4 May, 4:00 am</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div><br>
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h5>Canadian GP
+                    </h5>
+
+                    <p>📍 Circuit Gilles Villeneuve</p>
+
+                    <p>Mon, 25 May, 4:00 am</p>
+
+                    <a href="/events" class="btn btn-danger btn-sm">Book</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Center : Drivers -->
+        <div class="col-md-6">
+
+            <h2 class="text-center mb-4">F1 Drivers</h2>
+
+            <div class="row text-center">
+
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/goat.webp" class="img-fluid rounded">
+            <p>Lewis Hamilton</p>
+        </div>
+
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/max.webp" class="img-fluid rounded">
+            <p>Max Verstappen</p>
+        </div>
+
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/stupid.webp" class="img-fluid rounded">
+            <p>Charles Leclerc</p>
+        </div>
+
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/destroyer.webp" class="img-fluid rounded">
+            <p>George Russel</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/norris.webp" class="img-fluid rounded">
+            <p>Lando Norris</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/kimi.webp" class="img-fluid rounded">
+            <p>Kimi Antonelli</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/alanso.webp" class="img-fluid rounded">
+            <p>Fernando Alonso</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/smooth.webp" class="img-fluid rounded">
+            <p>Carlos Sainz</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/piastri.webp" class="img-fluid rounded">
+            <p>Oscar Piastri</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/hadjar.webp" class="img-fluid rounded">
+            <p>Isack Hadjar</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/yukisan.webp" class="img-fluid rounded">
+            <p>Yuki Tsunoda</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/hulk.webp" class="img-fluid rounded">
+            <p>Nico Hulkenberg</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/albon.webp" class="img-fluid rounded">
+            <p>Alexander Albon</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/ollie.webp" class="img-fluid rounded">
+            <p>Ollie Bearman</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/bor.webp" class="img-fluid rounded">
+            <p>Gabrial Bortoletto</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/liam.webp" class="img-fluid rounded">
+            <p>Liam Lawson</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/jew.webp" class="img-fluid rounded">
+            <p>Lance Stroll</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/ocon.webp" class="img-fluid rounded">
+            <p>Esteban Ocon</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/gasly.webp" class="img-fluid rounded">
+            <p>Pierre Gasly</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/col.webp" class="img-fluid rounded">
+            <p>Franco Colapinto</p>
+        </div>
+
+
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/bot.avif" class="img-fluid rounded">
+            <p>Valtteri Bottas</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/perez.jpeg" class="img-fluid rounded">
+            <p>Serio Perez</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/magnussen.avif" class="img-fluid rounded">
+            <p>Kevin Magnussen</p>
+        </div>
+        <div class="col-md-3 driver-card text-center">
+            <img src="/images/doohan.webp" class="img-fluid rounded">
+            <p>Jack Doohan</p>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+        <!-- Right Side : Previous Results -->
+        <div class="col-md-3">
+
+            <h2 class="text-center">Previous Results (2026)</h2>
+
+            <table class="table table-dark table-sm">
+
+                <tr>
+                    <td>Australian GP</td>
+                    <td>G. Russel</td>
+                </tr>
+
+
+
+            </table>
+            <br>
+            <h2><center>2025 World Champion</center></h2>
+            <h2><center>🏆</center></h2>
+            <img src="/images/norris.webp" class="img-fluid rounded">
+            <p><center><b>Lando Norris</b></center></p>
+            <h2 class="text-center">2025 Results</h2>
+            <table class="table table-dark table-sm">
+
+                <tr>
+                    <td>Australian GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Chinese GP
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Japanese GP
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Bahrain GP
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Saudi Arabian Grand Prix
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Miami Grand Prix
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Emilia Romagna GP
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Monaco GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Italian GP</td>
+                    <td>Max Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Spanish GP
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Canadian GP
+                    </td>
+                    <td>G. Russell</td>
+                </tr>
+                <tr>
+                    <td>Austrian GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>British GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Belgian GP
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Hungarian GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Dutch Grand Prix
+                    </td>
+                    <td>O. Piastri</td>
+                </tr>
+                <tr>
+                    <td>Italian GP</td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Azerbaijan GP
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Singapore GP
+                    </td>
+                    <td>G. Russell</td>
+                </tr>
+                <tr>
+                    <td>United States GP
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Mexican GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Brazilian GP
+                    </td>
+                    <td>L. Norris</td>
+                </tr>
+                <tr>
+                    <td>Las Vegas GP
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Qatar Grand Prix
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+                <tr>
+                    <td>Abu Dhabi GP
+
+                    </td>
+                    <td>M. Verstappen</td>
+                </tr>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script>
+
+    function openMenu(){
+    document.getElementById("sidebar").style.width="250px";
+    }
+
+    function closeMenu(){
+    document.getElementById("sidebar").style.width="0";
+    }
+
+</script>
+</body>
+</html>

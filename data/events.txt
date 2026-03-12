@@ -1,0 +1,24 @@
+Australian Grand Prix,Melbourne,March 8
+Chinese Grand Prix,Shanghai,March 15
+Japanese Grand Prix,Suzuka,March 29
+Bahrain Grand Prix,Sakhir,April 12
+Saudi Arabian Grand Prix,Jeddah,April 19
+Miami Grand Prix,Miami,May 3
+Canadian Grand Prix,Montreal,May 24
+Monaco Grand Prix,Monaco,June 7
+Barcelona-Catalunya Grand Prix,Barcelona,June 14
+Austrian Grand Prix,Spielberg,June 28
+British Grand Prix,Silverstone,July 5
+Belgian Grand Prix,Spa-Francorchamps,July 19
+Hungarian Grand Prix,Budapest,July 26
+Dutch Grand Prix,Zandvoort,August 23
+Italian Grand Prix,Monza,September 6
+Spanish Grand Prix,Madrid,September 13
+Azerbaijan Grand Prix,Baku,September 27
+Singapore Grand Prix,Marina Bay,October 11
+United States Grand Prix,Austin,October 25
+Mexico City Grand Prix,Mexico City,November 1
+São Paulo Grand Prix,Interlagos,November 8
+Las Vegas Grand Prix,Las Vegas,November 21
+Qatar Grand Prix,Lusail,November 29
+Abu Dhabi Grand Prix,Yas Marina,December 6

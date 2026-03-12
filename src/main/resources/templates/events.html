@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Race Calendar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">Race Calendar</h1>
+
+    <div class="d-flex justify-content-between mb-3">
+
+        <p class="text-success fw-bold" th:if="${admin}">Logged in as Admin</p>
+
+        <div>
+            <a href="/addEvent" class="btn btn-success" th:if="${admin}">Add New Race</a>
+            <a href="/logout" class="btn btn-danger" th:if="${admin}">Logout</a>
+        </div>
+    </div>
+    <style>
+        .table tbody tr:hover{
+        background:#ffe6e6;
+        transition:0.3s;
+        }
+    </style>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+        <tr>
+            <th>Action</th>
+            <th>Race</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Booking</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="race : ${races}">
+
+            <td>
+                <form th:if="${admin}" action="/deleteRace" method="post">
+                    <input type="hidden" name="raceName" th:value="${race.raceName}">
+                    <button class="btn btn-danger btn-sm"
+                            onclick="return confirm('Delete this race?')">
+                        Delete
+                    </button>
+                </form>
+            </td>
+
+            <td th:text="${race.raceName}"></td>
+            <td th:text="${race.location}"></td>
+            <td th:text="${race.date}"></td>
+
+            <td>
+                <form action="/bookTicket" method="post">
+                    <input type="hidden" name="raceName" th:value="${race.raceName}">
+                    <div th:if="${race.raceName == 'Australian Grand Prix'}">
+                        <button class="btn btn-secondary btn-sm" disabled>
+                            Booking Closed
+                        </button>
+                    </div>
+
+                    <div th:if="${race.raceName != 'Australian Grand Prix'}">
+                        <button class="btn btn-danger btn-sm">Book Ticket</button>
+                    </div>
+                </form>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+</table>
+<br>
+<a href="/" class="btn btn-secondary">Back to Home</a>
+</div>
+</body>
+</html>
